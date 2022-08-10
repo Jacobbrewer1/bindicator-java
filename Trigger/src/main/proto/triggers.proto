@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.github.jacobbrewer1.protos";
+option java_outer_classname = "BindicatorProto";
+
+package bindicator;
+
+service BindicatorService {
+  rpc TriggerAll (Empty) returns (Empty) {}
+}
+
+message Empty {}
+
+message Bins {
+  repeated Bin binList = 1;
+}
+
+message Bin {
+  string type = 1;
+  string next = 2;
+  string following = 3;
+  string pdf = 4;
+  bool communal = 5;
+}
