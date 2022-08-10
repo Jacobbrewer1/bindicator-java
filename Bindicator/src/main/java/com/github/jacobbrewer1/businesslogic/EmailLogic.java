@@ -1,6 +1,7 @@
 package com.github.jacobbrewer1.businesslogic;
 
 import com.github.jacobbrewer1.entities.Bin;
+import com.github.jacobbrewer1.logging.Logging;
 import org.joda.time.DateTime;
 
 import javax.mail.*;
@@ -11,6 +12,8 @@ import java.util.Properties;
 
 public class EmailLogic {
 
+    private final Logging logging;
+
     private final String fromAddress;
     private final String password;
 
@@ -19,7 +22,8 @@ public class EmailLogic {
 
     private final Properties properties;
 
-    public EmailLogic(String fromAddress, String password, String host, String hostPort, Properties properties) {
+    public EmailLogic(Logging logging, String fromAddress, String password, String host, String hostPort, Properties properties) {
+        this.logging = logging;
         this.fromAddress = fromAddress;
         this.password = password;
         this.host = host;
@@ -80,11 +84,11 @@ public class EmailLogic {
         // Now set the actual message
         message.setText(body);
 
-        System.out.println("sending...");
+        logging.logInfo("sending...");
 
         // Send message
         Transport.send(message);
 
-        System.out.println("Sent message successfully....");
+        logging.logInfo("Message sent successfully!");
     }
 }

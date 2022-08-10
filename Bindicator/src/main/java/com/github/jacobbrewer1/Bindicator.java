@@ -74,7 +74,7 @@ public class Bindicator {
 
         this.getBins = new GetBins(properties.getProperty("bcpApi"), logging, gson);
 
-        this.emailLogic = new EmailLogic(properties.getProperty("fromAddress"), properties.getProperty("emailPassword"),
+        this.emailLogic = new EmailLogic(logging, properties.getProperty("fromAddress"), properties.getProperty("emailPassword"),
                 properties.getProperty("mail.smtp.host"), properties.getProperty("mail.smtp.port", "465"), properties);
         this.triggerAllLogic = new TriggerAllLogic(logging, gson, emailLogic, getBins, peopleDal);
 
