@@ -1,7 +1,7 @@
-package com.github.jacobbrewer1.bindicator.dataaccess;
+package com.github.jacobbrewer1.dataaccess;
 
-import com.github.jacobbrewer1.bindicator.entities.Run;
-import com.github.jacobbrewer1.bindicator.interfaces.IBindicatorDal;
+import com.github.jacobbrewer1.entities.Run;
+import com.github.jacobbrewer1.interfaces.IBindicatorDal;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;

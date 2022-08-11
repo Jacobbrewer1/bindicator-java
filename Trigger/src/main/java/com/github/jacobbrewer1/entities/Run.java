@@ -1,4 +1,4 @@
-package com.github.jacobbrewer1.bindicator.entities;
+package com.github.jacobbrewer1.entities;
 
 import org.joda.time.DateTime;
 

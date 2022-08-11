@@ -1,15 +1,11 @@
-package com.github.jacobbrewer1.bindicator.businesslogic;
+package com.github.jacobbrewer1.businesslogic;
 
-import com.github.jacobbrewer1.bindicator.entities.Run;
-import com.github.jacobbrewer1.bindicator.interfaces.IBindicatorDal;
-import com.github.jacobbrewer1.bindicator.logging.Logging;
+import com.github.jacobbrewer1.entities.Run;
+import com.github.jacobbrewer1.interfaces.IBindicatorDal;
+import com.github.jacobbrewer1.logging.Logging;
 import org.joda.time.DateTime;
-import org.joda.time.Instant;
 
 import java.sql.SQLException;
-import java.time.Duration;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.Executors.newSingleThreadScheduledExecutor;
 
@@ -36,20 +32,19 @@ public class LoopingLogic {
                     long releaseTime = run.getNextRun().getMillis() - DateTime.now().getMillis();
 
                     if (releaseTime > 0) {
+                        logging.logInfo(String.format("Waiting until %s to run", run.getNextRun().toString("dd/MM/yyyy HH:mm:ss")));
+
                         Thread.sleep(releaseTime);
                     }
                 }
 
-                new Thread(() -> {
-                    try {
+                try {
+                    runLogic.execute();
 
-                        runLogic.execute();
-
-                        bindicatorDal.saveRun(run.getNextRun());
-                    } catch (SQLException exception) {
-                        exception.printStackTrace();
-                    }
-                }).start();
+                    bindicatorDal.saveRun(run.getNextRun());
+                } catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
 
                 bindicatorDal.saveRun(run.getNextRun());
             } catch (SQLException exception) {

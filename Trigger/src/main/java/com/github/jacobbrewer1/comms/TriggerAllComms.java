@@ -1,4 +1,4 @@
-package com.github.jacobbrewer1.bindicator.comms;
+package com.github.jacobbrewer1.comms;
 
 import com.github.jacobbrewer1.protos.BindicatorProto;
 import com.github.jacobbrewer1.protos.BindicatorServiceGrpc;

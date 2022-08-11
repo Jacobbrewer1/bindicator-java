@@ -1,11 +1,11 @@
-package com.github.jacobbrewer1.bindicator;
+package com.github.jacobbrewer1;
 
-import com.github.jacobbrewer1.bindicator.businesslogic.LoopingLogic;
-import com.github.jacobbrewer1.bindicator.businesslogic.RunLogic;
-import com.github.jacobbrewer1.bindicator.comms.TriggerAllComms;
-import com.github.jacobbrewer1.bindicator.dataaccess.BindicatorDal;
-import com.github.jacobbrewer1.bindicator.interfaces.IBindicatorDal;
-import com.github.jacobbrewer1.bindicator.logging.Logging;
+import com.github.jacobbrewer1.businesslogic.LoopingLogic;
+import com.github.jacobbrewer1.businesslogic.RunLogic;
+import com.github.jacobbrewer1.comms.TriggerAllComms;
+import com.github.jacobbrewer1.dataaccess.BindicatorDal;
+import com.github.jacobbrewer1.interfaces.IBindicatorDal;
+import com.github.jacobbrewer1.logging.Logging;
 
 import java.io.FileInputStream;
 import java.io.IOException;

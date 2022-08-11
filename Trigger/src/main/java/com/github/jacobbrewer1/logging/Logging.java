@@ -1,4 +1,4 @@
-package com.github.jacobbrewer1.bindicator.logging;
+package com.github.jacobbrewer1.logging;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

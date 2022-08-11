@@ -1,7 +1,7 @@
-package com.github.jacobbrewer1.bindicator.businesslogic;
+package com.github.jacobbrewer1.businesslogic;
 
-import com.github.jacobbrewer1.bindicator.comms.TriggerAllComms;
-import com.github.jacobbrewer1.bindicator.logging.Logging;
+import com.github.jacobbrewer1.comms.TriggerAllComms;
+import com.github.jacobbrewer1.logging.Logging;
 
 public class RunLogic {
 

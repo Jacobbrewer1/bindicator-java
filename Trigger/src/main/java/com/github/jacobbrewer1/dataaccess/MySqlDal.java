@@ -1,4 +1,4 @@
-package com.github.jacobbrewer1.bindicator.dataaccess;
+package com.github.jacobbrewer1.dataaccess;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 

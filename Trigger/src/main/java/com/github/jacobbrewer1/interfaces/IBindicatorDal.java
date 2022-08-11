@@ -1,6 +1,6 @@
-package com.github.jacobbrewer1.bindicator.interfaces;
+package com.github.jacobbrewer1.interfaces;
 
-import com.github.jacobbrewer1.bindicator.entities.Run;
+import com.github.jacobbrewer1.entities.Run;
 import org.joda.time.DateTime;
 
 import java.sql.SQLException;
